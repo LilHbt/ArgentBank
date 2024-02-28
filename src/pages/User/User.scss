@@ -1,0 +1,13 @@
+.background {
+  min-height: 100%;
+  background-color: #12002b;
+  padding: 30px;
+}
+.accounts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-welcome {
+  color: white;
+}

@@ -1,0 +1,28 @@
+.banner {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  &--img {
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0% 33%;
+  }
+  &-text {
+    text-align: left;
+    position: absolute;
+    background-color: white;
+    margin: 32px;
+    margin-bottom: 70px;
+    padding: 32px;
+    &--xl {
+      font: 1.5rem bold;
+      margin: 0;
+    }
+    &--s {
+      font-size: 1.2rem;
+      margin-bottom: 0;
+    }
+  }
+}

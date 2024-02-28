@@ -1,0 +1,15 @@
+.container-form {
+  padding: 12px;
+  margin: 30px auto;
+  width: 300px;
+  background-color: white;
+}
+.signUp-form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  & label {
+    text-align: left;
+  }
+}

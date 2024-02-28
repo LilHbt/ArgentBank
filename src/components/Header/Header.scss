@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+.logo {
+  width: 200px;
+}
+.signin-link {
+  margin: 15px;
+
+  text-decoration: none;
+  color: black;
+}

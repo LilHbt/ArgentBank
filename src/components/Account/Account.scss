@@ -1,0 +1,15 @@
+.container-account {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  margin: 24px;
+}
+.account-wrapper {
+  text-align: left;
+}
+.account-cta {
+  margin-right: 24px;
+}
