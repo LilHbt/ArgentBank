@@ -8,7 +8,9 @@ import {
   USERNAME_CHANGE_SUCCESS,
 } from "../types/userTypes";
 
-export const signInUser = (body, dispatch) => {
+export const storeToken = () => {};
+
+export const signInUser = (body, isChecked, dispatch) => {
   dispatch({
     type: SIGNIN_USER_REQUEST,
   });
@@ -27,13 +29,13 @@ export const signInUser = (body, dispatch) => {
     })
 
     .then((data) => {
-      getUser(data.body.token, dispatch);
+      getUser(data.body.token, isChecked, dispatch);
     })
     .catch((error) => {
       alert("Conexion denied, check email and password validity");
     });
 };
-export const getUser = (token, dispatch) => {
+export const getUser = (token, isChecked, dispatch) => {
   dispatch({
     type: GET_USER_REQUEST,
   });
@@ -52,6 +54,10 @@ export const getUser = (token, dispatch) => {
       }
     })
     .then((data) => {
+      if (isChecked === true) {
+        localStorage.setItem("token", token);
+      }
+
       dispatch({
         type: SIGNIN_USER_SUCCESS,
         payload: {
@@ -117,6 +123,7 @@ export const changeUserName = (token, body, dispatch) => {
     });
 };
 export const signOutUSer = (dispatch) => {
+  localStorage.removeItem("token");
   dispatch({
     type: SIGNOUT_USER,
   });

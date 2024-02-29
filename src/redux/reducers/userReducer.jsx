@@ -22,7 +22,6 @@ const userReducer = (state = initialeState, action) => {
         userLoading: true,
       };
     case SIGNIN_USER_SUCCESS:
-      localStorage.setItem("token", payload.token);
       return {
         ...state,
         userLoading: false,
@@ -35,7 +34,6 @@ const userReducer = (state = initialeState, action) => {
         userLoading: false,
       };
     case SIGNOUT_USER:
-      localStorage.removeItem("token");
       return {
         ...state,
         user: null,
@@ -51,6 +49,7 @@ const userReducer = (state = initialeState, action) => {
         ...state,
         userLoading: false,
       };
+
     default:
       return state;
   }
