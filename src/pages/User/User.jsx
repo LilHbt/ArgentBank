@@ -22,7 +22,7 @@ function User() {
       </h1>
       <button
         onClick={() => {
-          setIsOpened(true);
+          isOpened ? setIsOpened(false) : setIsOpened(true);
         }}
       >
         Edit name

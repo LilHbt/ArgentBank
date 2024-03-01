@@ -1,7 +1,5 @@
 import React from "react";
 import "./Home.scss";
-/*import { useDispatch, useSelector } from 'react-redux'
-import { changeUser } from '../redux/actions/userActions'*/
 import Banner from "../../components/Banner/Banner";
 import Feature from "../../components/Feature/Feature";
 import iconChat from "../../assets/img/icon-chat.png";
@@ -9,11 +7,6 @@ import iconMoney from "../../assets/img/icon-money.png";
 import iconSecurity from "../../assets/img/icon-security.png";
 
 function Home() {
-  /*  const dispatch = useDispatch()
-  const {user}= useSelector(state=>state.userReducer)
-  const onChangeUser = ()=>{
-    changeUser("fahad", dispatch)
-  }*/
   return (
     <div>
       <Banner />

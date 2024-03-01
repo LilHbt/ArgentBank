@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SignInForm.scss";
+import "./Form.scss";
 
 import { useDispatch } from "react-redux";
 import { signInUser } from "../../redux/actions/userActions";
@@ -18,16 +18,18 @@ const SignInForm = () => {
   const signIn = (e) => {
     e.preventDefault();
     let body = { email, password };
-    signInUser(body, isChecked, dispatch);
+    signInUser(isChecked, body, dispatch);
     routeChange();
   };
 
   return (
     <div className="container-form">
       <i className="fa fa-user-circle sign-in-icon"></i>
-      <h1>Sign In</h1>
-      <form className="sign-in-form" onSubmit={signIn}>
-        <label htmlFor="email">Email</label>
+      <h1 className="form-title">Sign In</h1>
+      <form className="form" onSubmit={signIn}>
+        <label className="label-bold" htmlFor="email">
+          Email
+        </label>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -37,7 +39,9 @@ const SignInForm = () => {
           autoComplete="email"
           required
         />
-        <label htmlFor="password">Password</label>
+        <label className="label-bold" htmlFor="password">
+          Password
+        </label>
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -64,7 +68,10 @@ const SignInForm = () => {
           Sign In
         </button>
       </form>
-      <Link to={"/SignUp"}>Sign Up</Link>
+      <p>You don't have an account?</p>
+      <Link className="signup-link" to={"/SignUp"}>
+        Sign Up
+      </Link>
     </div>
   );
 };

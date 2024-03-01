@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Home from "../pages/Home/Home";
-import SignIn from "../pages/SignIn/SignIn";
+import SignIn from "../pages/Login/Login";
 import User from "../pages/User/User";
 import SignUp from "../pages/SignUp/SignUp";
 import { useEffect } from "react";
@@ -14,10 +14,11 @@ const Navigation = () => {
   const { token } = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
   useEffect(() => {
-    const getToken = async () => {
+    const getToken = () => {
       const token = localStorage.getItem("token");
+      const isChecked = "";
       if (token) {
-        getUser(token, dispatch);
+        getUser(isChecked, token, dispatch);
       }
     };
     getToken();
@@ -27,9 +28,9 @@ const Navigation = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        {!token && <Route path="/SignIn" element={<SignIn />} />}
+        {!token && <Route path="/Login" element={<SignIn />} />}
         {!token && <Route path="/SignUp" element={<SignUp />} />}
-        {token && <Route path="/User" element={<User />} />}
+        {token && <Route path="/Profile" element={<User />} />}
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
       <Footer />

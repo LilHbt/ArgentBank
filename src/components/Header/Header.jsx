@@ -24,14 +24,17 @@ function Header() {
       </Link>
       {token ? (
         <div>
-          <Link className="signin-link" to="/User">
-            <i className="fa fa-user-circle signin-link--icon "></i>
+          <Link className="login-link" to="/Profile">
+            <i className="fa fa-user-circle login-link--icon "></i>
             {user.userName}
           </Link>
-          <button onClick={signOut}>Sign Out</button>
+          <button className="signout-button" onClick={signOut}>
+            <i className="fa fa-sign-out signout-icon"></i>
+            Sign Out
+          </button>
         </div>
       ) : (
-        <Link className="signin-link" to="/SignIn">
+        <Link className="login-link" to="/Login">
           <i className="fa fa-user-circle signin-link--icon "></i>
           Sign In
         </Link>

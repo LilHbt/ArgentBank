@@ -1,6 +1,5 @@
 import React from "react";
 import "./Account.scss";
-import Button from "../button/Button";
 
 const Account = (props) => {
   const { accountTitle } = props;
@@ -13,7 +12,7 @@ const Account = (props) => {
         <p>{accountAmount}</p>
         <p>{accountBalance}</p>
       </div>
-      <Button className="account-cta" type="#" text="View transactions" />
+      <button className="account-cta">View transactions</button>
     </div>
   );
 };
