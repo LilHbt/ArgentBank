@@ -20,15 +20,28 @@
     margin-bottom: 70px;
     padding: 32px;
 
+    @media(max-width:650px) {
+      width: 200px;
+    }
+
     &--xl {
       font-weight: bold;
       font-size: 24px;
       margin: 0;
+
+      @media(max-width:650px) {
+        font-size: 18px;
+      }
+
     }
 
     &--s {
       font-size: 1.2rem;
       margin-bottom: 0;
+
+      @media(max-width:650px) {
+        font-size: 14px;
+      }
     }
   }
 }
