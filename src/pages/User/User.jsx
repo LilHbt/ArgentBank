@@ -11,6 +11,7 @@ function User() {
   const [userName, setUserName] = useState("");
   const userNameChange = (e) => {
     e.preventDefault();
+    e.target.reset();
     let body = { userName };
     changeUserName(token, body, dispatch);
   };
@@ -18,37 +19,69 @@ function User() {
   return (
     <div className="background">
       <h1 className="user-welcome">
-        Welcome back {user.firstName} {user.lastName}!
+        Welcome back <br /> {user.firstName} {user.lastName}!
       </h1>
       <button
+        className="edit-button"
         onClick={() => {
-          isOpened ? setIsOpened(false) : setIsOpened(true);
+          setIsOpened(true);
         }}
       >
         Edit name
       </button>
       {isOpened ? (
-        <form onSubmit={userNameChange}>
-          <label htmlFor="username">New Username</label>
-          <input
-            autoComplete="on"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-            type="text"
-            name="username"
-            id="username"
-          ></input>
-          <button
-            async
-            onClick={(e) => {
-              setTimeout(() => {
-                setIsOpened(false);
-              }, 1000);
-            }}
-          >
-            Submit
-          </button>
-        </form>
+        <div className="container">
+          <h3>Edit user info</h3>
+          <form className="edit-form" onSubmit={userNameChange}>
+            <label htmlFor="username">New Username</label>
+            <input
+              autoComplete="on"
+              onChange={(e) => setUserName(e.target.value)}
+              type="text"
+              name="username"
+              id="username"
+            ></input>
+            <label htmlFor="firstName">First name</label>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              value={user.firstName}
+              disabled
+            />
+            <label htmlFor="lastName">Last name</label>
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              value={user.lastName}
+              disabled
+            />
+            <div className="buttons">
+              <button
+                className="edit-button"
+                type="submit"
+                async
+                onClick={(e) => {
+                  setTimeout(() => {
+                    setIsOpened(false);
+                  }, 1000);
+                }}
+              >
+                Submit
+              </button>
+              <button
+                className="edit-button"
+                type="button"
+                onClick={() => {
+                  setIsOpened(false);
+                }}
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
       ) : (
         <div></div>
       )}
