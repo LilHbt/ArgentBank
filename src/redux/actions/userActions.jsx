@@ -8,7 +8,7 @@ import {
   USERNAME_CHANGE_SUCCESS,
 } from "../types/userTypes";
 
-export const signInUser = (isChecked, body, dispatch) => {
+export const signInUser = (isChecked, body, routeChange, dispatch) => {
   dispatch({
     type: SIGNIN_USER_REQUEST,
   });
@@ -28,6 +28,7 @@ export const signInUser = (isChecked, body, dispatch) => {
 
     .then((data) => {
       getUser(isChecked, data.body.token, dispatch);
+      routeChange();
     })
     .catch((error) => {
       alert("Conexion denied, check email and password validity");

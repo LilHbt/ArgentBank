@@ -18,8 +18,7 @@ const SignInForm = () => {
   const signIn = (e) => {
     e.preventDefault();
     let body = { email, password };
-    signInUser(isChecked, body, dispatch);
-    routeChange();
+    signInUser(isChecked, body, routeChange, dispatch);
   };
 
   return (

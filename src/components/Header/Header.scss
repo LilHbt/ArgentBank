@@ -11,6 +11,18 @@
   width: 250px;
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.signout,
+.signin {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
 .login-link {
   margin: 0px 8px 0px 0px;
@@ -20,16 +32,16 @@
   font-size: 18px;
   font-family: 'Avenir', sans-serif;
 
-  &--icon {
-    margin-right: 5px;
-  }
 
   &:hover {
     text-decoration: underline;
   }
 }
 
+
+
 .signout-button {
+  padding: 0;
   border: none;
   background-color: white;
   color: #2c3e50;

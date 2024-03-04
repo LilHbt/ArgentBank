@@ -23,21 +23,27 @@ function Header() {
         <img className="logo" src={logo} alt="logo Argent Bank" />
       </Link>
       {token ? (
-        <div>
-          <Link className="login-link" to="/Profile">
-            <i className="fa fa-user-circle login-link--icon "></i>
-            {user.userName}
-          </Link>
-          <button className="signout-button" onClick={signOut}>
+        <div className="nav">
+          <div className="signin">
+            <i className="fa fa-circle-user login-link--icon "></i>
+            <Link className="login-link" to="/Profile">
+              {user.userName}
+            </Link>
+          </div>
+          <div className="signout">
             <i className="fa fa-sign-out signout-icon"></i>
-            Sign Out
-          </button>
+            <button className="signout-button" onClick={signOut}>
+              Sign Out
+            </button>
+          </div>
         </div>
       ) : (
-        <Link className="login-link" to="/Login">
-          <i className="fa fa-user-circle signin-link--icon "></i>
-          Sign In
-        </Link>
+        <div>
+          <i className="fa fa-circle-user signin-link--icon "></i>
+          <Link className="login-link" to="/Login">
+            Sign In
+          </Link>
+        </div>
       )}
     </header>
   );
