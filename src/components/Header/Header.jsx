@@ -38,8 +38,10 @@ function Header() {
           </div>
         </div>
       ) : (
-        <div>
-          <i className="fa fa-circle-user signin-link--icon "></i>
+        <div className="nav">
+          <div>
+            <i className="fa fa-circle-user signin-link--icon "></i>
+          </div>
           <Link className="login-link" to="/Login">
             Sign In
           </Link>
