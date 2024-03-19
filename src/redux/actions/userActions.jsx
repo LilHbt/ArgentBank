@@ -19,7 +19,7 @@ export const signInUser = (isChecked, body, routeChange, dispatch) => {
     body: JSON.stringify(body),
   })
     .then((res) => {
-      if (res.status >= 200 && res.status <= 299) {
+      if (res.status === 200) {
         return res.json();
       } else {
         throw Error("Error message");
@@ -46,7 +46,7 @@ export const getUser = (isChecked, token, dispatch) => {
     },
   })
     .then((res) => {
-      if (res.status >= 200 && res.status <= 299) {
+      if (res.status === 200) {
         return res.json();
       } else {
         throw Error("Error message");
@@ -77,7 +77,7 @@ export const signUpUser = (body) => {
     body: JSON.stringify(body),
   })
     .then((res) => {
-      if (res.status >= 200 && res.status <= 299) {
+      if (res.status === 200) {
         return res.json();
       } else {
         throw Error("Error message");
@@ -104,7 +104,7 @@ export const changeUserName = (token, body, dispatch) => {
     body: JSON.stringify(body),
   })
     .then((res) => {
-      if (res.status >= 200 && res.status <= 299) {
+      if (res.status === 200) {
         return res.json();
       } else {
         throw Error("Error message");
